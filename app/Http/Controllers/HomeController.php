@@ -412,7 +412,7 @@ class HomeController extends Controller
     }
     public function GotoGallery($slug){
         $slug1  = "Photos";
-        $slug2 = $slug;
+        $slug2 = $navigation_id = Navigation::all()->where('nav_name',$slug)->first()->caption;
         // return Navigation::all()->where('id',$subcategory_id);
         $navigation_id = Navigation::all()->where('nav_name',$slug)->first()->id;
         $photos = NavigationItems::query()->where('navigation_id',$navigation_id)->latest()->get();
