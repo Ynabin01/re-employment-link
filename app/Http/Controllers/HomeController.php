@@ -329,6 +329,7 @@ class HomeController extends Controller
          }
         if($subcategory_type == "Photo Gallery"){
             //return "return to page gallary";
+           
             $photos = NavigationItems::query()->where('navigation_id',$subcategory_id)->latest()->get();
             return view("website.photogallery")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
             
@@ -410,9 +411,12 @@ class HomeController extends Controller
         return view('website.job-list-cat')->with(['jobs'=>$jobs,'slug1'=>$slug1,]);
     }
     public function GotoGallery($slug){
+        $slug1  = "Photos";
+        $slug2 = $slug;
+        // return Navigation::all()->where('id',$subcategory_id);
         $navigation_id = Navigation::all()->where('nav_name',$slug)->first()->id;
         $photos = NavigationItems::query()->where('navigation_id',$navigation_id)->latest()->get();
-        return view("website.photogallery")->with(['photos'=>$photos,]);
+        return view("website.photogallery")->with(['photos'=>$photos,'slug1'=>$slug1,'slug2'=>$slug2]);
     }
   
 }
