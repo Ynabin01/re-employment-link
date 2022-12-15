@@ -17,7 +17,7 @@
                                     enctype='multipart/form-data'>
                                     @csrf
 
-                                    <div class="row">
+                                    <div class="row"> 
                                         <div class="col-md-6">
                                             <div class="single-input-item">
                                                 <label>

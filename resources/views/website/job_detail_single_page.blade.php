@@ -46,7 +46,7 @@
                             </li>
                             <li>
                                 <h6>Location</h6>
-                                <p>{{ $job->getJob->country }}</p>
+                                <p>{{ $job->getJob->country }} </p>
                             </li>
                             <li>
                                 <h6>Offered Salary</h6>
@@ -64,7 +64,7 @@
                                 <h6>Qualification</h6>
                                 <p>{{ $job->getJob->qualification }}</p>
                             </li>
-                            <li>
+                
                                 <h6>Age range</h6>
                                 <p>{{ $job->getJob->age_range }}</p>
                             </li>
